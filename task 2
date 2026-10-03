@@ -1,0 +1,67 @@
+#include <iostream>
+using namespace std;
+class Rectangle 
+{
+private:
+    float length;
+    float width;
+public:
+    Rectangle(float x,float y) 
+   {
+        setLength(x); 
+        setWidth(y);
+    }
+    ~Rectangle() 
+   {
+        cout <<"Object is destroyed:"<<endl;
+    }
+    void setLength(float w) 
+   {
+        if(w>0.0 && w<20.0) 
+   {
+            length=w;
+        } 
+        else
+   {
+            length=1.0;
+        }
+    }
+    void setWidth(float w) 
+   {
+        if (w>0.0 && w<20.0) 
+   {
+            width=w;
+        } 
+        else 
+   {
+            width=1.0;
+        }
+    }
+    float getWidth() 
+   {
+        return width;
+    }
+    float getLength() 
+  {
+        return length;
+    }
+    float perimeter()  
+  {
+        float p=2*(length+width);
+        return p;
+    }
+    float area() 
+  {
+        float A=length*width;
+        return A;
+    }
+};
+int main()
+ {
+    Rectangle r1(10.0,15.0);
+    cout<<"Width is:"<<r1.getWidth()<<endl;
+    cout<<"Length is:"<<r1.getLength()<<endl;
+    cout<<"Perimeter is:"<<r1.perimeter()<<endl;
+    cout<<"Area is:"<<r1.area()<<endl;
+    return 0;
+}
