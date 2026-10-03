@@ -1,0 +1,64 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Result{
+private:
+    int rollNo;
+    string name;
+    int marks[3];
+public:
+    Result(int x,string y,int z[]) {
+        rollNo = x;
+        name = y;
+        for(int i = 0;i < 3;i++) {
+            marks[i]=z[i];
+        }
+    }
+    ~Result() 
+   {
+        cout <<"Object is destroyed"<<endl;
+    }
+    void input(int r,string n,int m[]) 
+    {
+        rollNo = r;
+        name = n;
+        for(int i = 0; i < 3; i++) {
+            marks[i]=m[i];
+        }
+    }
+    int getRollNo() 
+    {
+        return rollNo;
+    }
+    string getName() 
+   {
+        return name;
+    }
+    int getMark(int index)
+   {
+        return marks[index];
+    }
+    int total() 
+    {
+        int sum = 0;
+        for(int i = 0; i < 3; i++) 
+   {
+            sum = sum + marks[i];
+        }
+        return sum;
+    }
+    float avg()
+   {
+        return total()/3.0;
+    }
+};
+int main() 
+{
+    int z[3] = {10, 20, 30};
+    Result r1(70,"Rabbia",z);
+    cout <<"Roll No:"<<r1.getRollNo()<<endl;
+    cout <<"Name:"<<r1.getName()<<endl;
+    cout <<"Total Marks:"<< r1.total()<<endl;
+    cout <<"Average Marks:"<<r1.avg()<<endl;
+    return 0;
+}
