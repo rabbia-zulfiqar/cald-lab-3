@@ -6,7 +6,7 @@ private:
     float length;
     float width;
 public:
-    Rectangle(float x,float y) 
+    Rectangle(float x=1.0,float y=1.0) 
    {
         setLength(x); 
         setWidth(y);
